@@ -1,0 +1,42 @@
+﻿@model IEnumerable<object>
+
+    @{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h1>Các sản phẩm đợi phê duyệt</h1>
+    </p>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Ten San Pham</th>
+                    <th>Ten tiem</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @item.GetType().GetProperty("ProductName").GetValue(item, null)
+                    </td>
+                    <td>
+                        @item.GetType().GetProperty("AgentName").GetValue(item, null)
+                    </td>
+                    <td>
+                        <a asp-action="MDetailProduct" class="btn btn-outline-success" asp-route-ProductId="@item.GetType().GetProperty("ProductId").GetValue(item,null)">Detail</a>
+                    </td>
+                    <td>
+                    <td class="text-center">
+                        <a  class="btn btn-outline-primary" href="SetStatusProduct?ProductId=@item.GetType().GetProperty("ProductId").GetValue(item,null)&Status=0">Accept</a>
+                    </td>
+                    <td class="text-center">
+                        <a  class="btn btn-danger" href="SetStatusProduct?ProductId=@item.GetType().GetProperty("ProductId").GetValue(item,null)&Status=2">Deny</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>

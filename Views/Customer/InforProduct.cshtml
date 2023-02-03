@@ -1,0 +1,24 @@
+﻿@model DoAn1.ViewModels.CSProductViewModel
+
+<h1>Chi tiết sản phẩm</h1>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Tên tiệm</th>
+                <th>Giá</th>
+                <th>Mô tả</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.ProductName</td>
+                <td>@Model.AgentName</td>
+                <td>@string.Format("{0:0,0}VND", Model.Unitprice)</td>
+                <td>@Model.Description</td>
+                <td>@Html.ActionLink("Đặt luôn","OrderProduct",Model)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

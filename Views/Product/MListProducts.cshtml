@@ -1,0 +1,39 @@
+﻿@model List<DoAn1.ViewModels.ManagerProductViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Danh sách sản phẩm</h1>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Tên tiệm</th>
+                <th>Giá</th>
+                <th>Danh mục</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="MDetailProduct?ProductId=@item.ProductId">@item.ProductName</a>
+                    </td>
+                    <td>
+                        @item.AgentName
+                    </td>
+                    <td>
+                        @item.UnitPrice
+                    </td>
+                    <td>
+                        @item.CategoryName
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

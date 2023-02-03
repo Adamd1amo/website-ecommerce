@@ -1,0 +1,43 @@
+﻿@model  DoAn1.ViewModels.ManagerProductViewModel
+
+@{    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3 my-3 border">
+    <h1>Chi tiết sản phẩm</h1>
+    <hr />
+    <form asp-action="MDetailProduct">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label class="control-label" asp-for="ProductName"></label>
+            <input asp-for="ProductName" class="form-control" disabled/>
+            <span asp-validation-for="ProductName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="UnitPrice"></label>
+            <input asp-for="UnitPrice" class="form-control" disabled/>
+            <span asp-validation-for="UnitPrice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" disabled/>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="AgentName"></label>
+            <input asp-for="AgentName" class="form-control" disabled/>
+            <span asp-validation-for="AgentName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="CategoryName"></label>
+            <input asp-for="CategoryName" class="form-control" disabled/>
+            <span asp-validation-for="CategoryName" class="text-danger"></span>
+        </div>
+    </form>
+    <div>
+        <a class="btn btn-danger" href="SetStatusProduct?ProductId=@Model.ProductId&Status=2">Gỡ khỏi trang web</a>
+        <a class="btn btn-primary" asp-action="MListCheckProducts">Danh sách sản phẩm chờ duyệt</a>
+        <a class="btn btn-primary" asp-action="MListProducts">Danh sách các sản phẩm đang bán</a>
+    </div>
+</div>

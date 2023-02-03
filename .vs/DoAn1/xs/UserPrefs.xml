@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{9D88BA45-6DDC-406B-AA1B-13DB5974068B}|Default">
+  <MonoDevelop.Ide.ItemProperties.DoAn1 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Customer/Profile.cshtml">
+    <Files>
+      <File FileName="Models/Customer.cs" Line="1" Column="1" />
+      <File FileName="Views/Customer/Profile.cshtml" Line="410" Column="102" />
+      <File FileName="Data/DoAn1Context.cs" Line="15" Column="46" />
+      <File FileName="Views/Customer/CompleteOrder.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Customer/DisplayProducts.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Customer/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Customer/InforProduct.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Customer/Login.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Customer/OrderProduct.cshtml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DoAn1" expanded="True">
+            <Node name="DoAn1" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Customer" expanded="True">
+                  <Node name="Profile.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

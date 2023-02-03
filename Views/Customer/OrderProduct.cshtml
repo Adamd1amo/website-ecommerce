@@ -1,0 +1,62 @@
+﻿@model DoAn1.ViewModels.OrderProductViewModel
+
+
+<link href="~/css/FormOrder.css" rel="stylesheet">
+<link href="~/js/site.js" rel="stylesheet" />
+<h1 style="color:red">@TempData["StatusMessage"]</h1>
+<div class="container">
+    <div class="title">
+        <h2>Trang thông tin đặt hàng</h2>
+    </div>
+    <div class="d-flex">
+        <form asp-action="OrderProduct" method="post" oninput="total.value=parseInt(a.value)*parseInt(b.value)">
+            <div>
+                <h3>Thông tin nhận hàng</h3>
+                <label>
+                    <span>Tên</span>
+                    <input type="text" asp-for="@Model.FullName" readonly>
+                </label>
+                <label>
+                    <span>Số điện thoại</span>
+                    <input type="text" name="Telephone">
+                </label>
+                <label>
+                    <span>Địa chỉ<span class="required">*</span></span>
+                    <input type="text" name="Address" />
+                </label>
+            </div>
+            <div>
+                <h3>Thông tin đơn hàng</h3>
+                <input type="hidden" name="ProductId" asp-for="@Model.productViewModel.ProductId" />
+                <label>
+                    <span>Tên sản phẩm</span>
+                    <input asp-for="@Model.productViewModel.ProductName" size="150" readonly />
+                </label>
+                <label>
+                    <span>Giá/ Sản phẩm</span>
+                    <input value="@string.Format("{0:0,0}VND",Model.productViewModel.Unitprice)" size="50" readonly />
+                    <input name="Unitprice" value="@Model.productViewModel.Unitprice" type="hidden" id="a" />
+                </label>
+                <label>
+                    <span>Số lượng</span>
+                    <input type="number" name="Quantity" value="1" min=1 size="50" id="b" />
+                </label>
+                <label>
+                    <span>Tổng</span>
+                    <output name="Total" id="total" />
+                </label>
+                <div>
+                    <input type="radio" name="Pay" value="bank" checked> Chuyển khoản
+                </div>
+                <div>
+                    <input type="radio" name="Pay" value="cod"> Thanh toán khi giao
+                </div>
+                <p>
+                    Tình hình dịch bệnh phức tạp, khách hàng nên ưu tiên phương thức thanh toán ngân hàng để hạn chế tiếp xúc.
+                </p>
+                <input id="dathang" type="submit" value="Đặt hàng"/>
+                <a class="btn btn-primary" asp-action="DisplayProducts">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>
